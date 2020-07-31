@@ -1,0 +1,14 @@
+# A scrape configuration scraping a Node Exporter and the Prometheus server
+# itself.
+scrape_configs:
+  # Scrape Prometheus itself every 10 seconds.
+#  - job_name: 'prometheus'
+#    scrape_interval: 10s
+#    static_configs:
+#      - targets: ['localhost:9090']
+
+# Update the docker run script in the bin to make sure the port is exposed for the job.
+  - job_name: 'dbmoxy'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['localhost:5670']
